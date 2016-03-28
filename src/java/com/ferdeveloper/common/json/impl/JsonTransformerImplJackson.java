@@ -1,7 +1,8 @@
-package com.ferdeveloper.common.json;
+package com.ferdeveloper.common.json.impl;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.ferdeveloper.common.json.JsonTransformer;
 import com.ferdeveloper.common.json.JsonTransformer;
 import java.io.IOException;
 

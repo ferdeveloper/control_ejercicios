@@ -3,45 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.ferdeveloper.persistencia.dao.impl.hibernate;
+package com.ferdeveloper.servicio.impl;
 
 import com.ferdeveloper.negocio.Ejercicio;
 import com.ferdeveloper.persistencia.dao.BussinessException;
 import com.ferdeveloper.persistencia.dao.EjercicioDAO;
-import com.ferdeveloper.persistencia.dao.GenericDAO;
-import com.ferdeveloper.persistencia.dao.HibernateUtil;
+import com.ferdeveloper.persistencia.dao.impl.hibernate.EjercicioDAOImplHibernate;
+import com.ferdeveloper.servicio.EjercicioService;
 import java.util.List;
-import org.hibernate.Query;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
-import org.hibernate.service.ServiceRegistry;
-import org.hibernate.service.ServiceRegistryBuilder;
 
 /**
  *
  * @author fernandoarenasdev
  */
-public class EjercicioDAOImplHibernate implements EjercicioDAO {
-
-    SessionFactory sessionFactory;
+public class EjercicioServiceImpl implements EjercicioService{
+    EjercicioDAO ejercicioDAO = new EjercicioDAOImplHibernate();
 
     @Override
     public Ejercicio get(int id) throws BussinessException {
-
-        HibernateUtil.buildSessionFactory();
-        Ejercicio ejercicio = null;
-
-        try {
-            HibernateUtil.openSessionAndBindToThread();
-            Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-            ejercicio = (Ejercicio) session.get(Ejercicio.class, id);
-        } finally {
-            HibernateUtil.closeSessionAndUnbindFromThread();
-        }
-
-        //HibernateUtil.closeSessionFactory();
-        return ejercicio;
+        return ejercicioDAO.get(id);
     }
 
     @Override
@@ -66,13 +46,7 @@ public class EjercicioDAOImplHibernate implements EjercicioDAO {
 
     @Override
     public List<Ejercicio> findAll() throws BussinessException {
-        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-        session.beginTransaction();
-
-        Query query = session.createQuery("FROM Ejercicio");
-        List<Ejercicio> ejercicios = query.list();
-
-        return ejercicios;
+        return ejercicioDAO.findAll();
     }
-
+    
 }
