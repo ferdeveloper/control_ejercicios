@@ -1,0 +1,28 @@
+<div ng-controller="DeleteController">
+    <div class="span3 well formularioUpdate">
+        <h2>Ejercicio</h2>
+        <form accept-charset="UTF-8" action="" method="post">
+            <fieldset class="form-group">
+                <label for="nombreEjercicio">Nombre</label>
+                <input type="text" class="form-control" id="nombreEjercicio" value="{{ejercicio.nombreEjercicio}}">
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="descripcionEjercicio">Descripción</label>
+                <textarea class="form-control" id="descripcionEjercicio" maxlength="295" rows="6">{{ejercicio.descripcionEjercicio}}</textarea>
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="categoriaEjercicio">Categoría</label>
+                <input type="text" class="form-control" id="categoriaEjercicio" value="{{ejercicio.categoriaEjercicio}}">
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="fechaEjercicio">Fecha</label>
+                <input type="text" class="form-control" id="fechaEjercicio" value="{{ejercicio.fechaEjercicio}}">
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="observacionesEjercicio">Observaciones</label>
+                <textarea class="form-control" id="observacionesEjercicio" maxlength="295" rows="6">{{ejercicio.observacionesEjercicio}}</textarea>
+            </fieldset>
+            <input ng-click="borrar()" type="submit" value="Borrar" class="btn btn-primary"/><br>
+        </form>
+    </div>
+</div>

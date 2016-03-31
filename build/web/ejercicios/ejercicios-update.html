@@ -1,0 +1,32 @@
+<div>
+    <div class="span3 well formularioUpdate">
+        <h2>Update</h2>
+        <form accept-charset="UTF-8" id="formularioUpdate" action="" method="post" ng-controller="UpdateController">
+            <fieldset class="form-group">
+                <label for="idEjercicio">ID Ejercicio</label>
+                <input type="text" class="form-control" id="idEjercicio" ng-model="ejercicio.idEjercicio" ng-value="{{ejercicio.idEjercicio}}">
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="nombreEjercicio">Nombre</label>
+                <input type="text" class="form-control" id="nombreEjercicio" ng-model="ejercicio.nombreEjercicio" ng-value="{{ejercicio.nombreEjercicio}}">
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="descripcionEjercicio">Descripción</label>
+                <textarea class="form-control" id="descripcionEjercicio" maxlength="295" rows="6" ng-model="ejercicio.descripcionEjercicio"></textarea>
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="categoriaEjercicio">Categoría</label>
+                <input type="text" class="form-control" id="categoriaEjercicio" ng-model="ejercicio.categoriaEjercicio">
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="fechaEjercicio">Fecha</label>
+                <input type="text" class="form-control" id="fechaEjercicio" ng-model="ejercicio.fechaEjercicio">
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="observacionesEjercicio">Observaciones</label>
+                <textarea class="form-control" id="observacionesEjercicio" maxlength="295" rows="6" ng-model="ejercicio.observacionesEjercicio"></textarea>
+            </fieldset>
+            <input ng-click="actualizar()" type="submit" value="actualizar" class="btn btn-primary"/><br>
+        </form>
+    </div>
+</div>

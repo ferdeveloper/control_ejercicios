@@ -60,6 +60,15 @@ header .intro-text .skills {
     font-weight: 300;
 }
 
+#buscador{
+    margin-bottom: 10px;
+}
+.btn-info{
+    padding-top: 4px;
+    padding-bottom: 4px;
+    background-color: #454B4E;
+}
+
 section {
     padding: 100px 0;    
     width: 100%;

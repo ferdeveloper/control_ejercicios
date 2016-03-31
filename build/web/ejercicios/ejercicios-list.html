@@ -1,0 +1,48 @@
+<div ng-controller="ListController">
+    <!--<input type="text" ng-model="filtroCategoria" placeholder="filtrar por...">-->
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+
+                    <select class="form-control" id="sel1" ng-model="filtroCategoria">
+                        <option value="">Filtrar por...</option>
+                        <option value="-fechaEjercicio">Fecha (Ult-Prim)</option>
+                        <option value="fechaEjercicio">Fecha (Prim-Ult)</option>
+                        <option value="categoriaEjercicio">Categoria (A-Z)</option>
+                        <option value="-categoriaEjercicio">Categoria (Z-A)</option>
+                    </select>
+                </div>
+
+                <div id="buscador">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Buscar" ng-model="buscador"/>
+                        <span class="input-group-btn">
+                            <button class="btn btn-info btn-lg" type="button" disabled>
+                                <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <table class="table table-bordered table-striped table-hover table-responsive">
+                    <thead class="thead-inverse">
+                        <tr>
+                            <td>Ejercicio</td>
+                            <td>Categoría</td>
+                            <td>Fecha</td>
+                            <td>Ver</td>
+                    </thead>
+                    <tr ng-repeat="ejercicio in ejercicios| filter:buscador | orderBy:filtroCategoria" class="clickable-row">
+                        <td>{{ejercicio.nombreEjercicio}}</td>
+                        <td>{{ejercicio.categoriaEjercicio}}</td>
+                        <td>{{ejercicio.fechaEjercicio| date:"longDate"}}</td>
+                        <td><a href="#/get/{{ejercicio.idEjercicio}}"><button class="btn btn-primary">Ver Ejercicio </button></a></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
