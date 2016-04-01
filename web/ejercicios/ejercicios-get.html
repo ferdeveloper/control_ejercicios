@@ -1,20 +1,33 @@
 <div ng-controller="GetController" class="datosEjercicio">
+    <br>
+    <div class="span3 well">
+        <label>Ejercicio</label>
+        <div class="container_get">
+            <p>{{ejercicio.nombreEjercicio}}</p>
+        </div>
+        <label>Descripción</label>
+        <div class="container_get">
+            <p>{{ejercicio.descripcionEjercicio}}</p>
+        </div>
+        <label>Categoría</label>
+        <div class="container_get">
+            <p>{{ejercicio.categoriaEjercicio}}</p>
+        </div>
+        <label>Fecha</label>
+        <div class="container_get">
+            <p>{{ejercicio.fechaEjercicio}}</p>
+        </div>
+        <label>Observaciones</label>
+        <div class="container_get">
+            <p>{{ejercicio.observacionesEjercicio}}</p>
+        </div>
+        <div class="text-right"> <!--You can add col-lg-12 if you want -->
+            <a href="#/list/"><button class="btn btn-primary">Volver</button></a>
+        </div>
 
-    <div>
-        <dl class="dl-horizontal">
-            <dt>Ejercicio</dt>
-            <dd>{{ejercicio.nombreEjercicio}}</dd>
-            <dt>Descripción</dt>
-            <dd>{{ejercicio.descripcionEjercicio}}</dd>
-            <dt>Categoría</dt>
-            <dd>{{ejercicio.categoriaEjercicio}}</dd>
-            <dt>Fecha</dt>
-            <dd>{{ejercicio.fechaEjercicio}}</dd>
-            <dt>Observaciones</dt>
-            <dd>{{ejercicio.observacionesEjercicio}}</dd>
-        </dl>   
-        <a href="#/list/"><button class="btn btn-primary">Volver</button></a>
     </div>
-
+    <br>
 </div>
+
+
 

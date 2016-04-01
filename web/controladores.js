@@ -17,7 +17,7 @@ app.controller("GetController", ['$scope', '$log', '$http', '$routeParams', func
 
         $http({
             method: 'GET',
-            url: '/control_ejercicios_api/api/Ejercicio/' + $routeParams.idEjercicio
+            url: '/russafa/api/Ejercicio/' + $routeParams.idEjercicio
         }).success(function (data, status, headers, config) {
             $scope.ejercicio = data;
         }).error(function (data, status, headers, config) {
