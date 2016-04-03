@@ -11,8 +11,8 @@
             password="" 
             
             maxActive="100" 
-            maxIdle="30" 
-            maxWait="10000" 
+            maxIdle="100" 
+            maxWait="5000" 
             
             alidationQuery="SELECT 1 FROM dual"/>
 </Context>

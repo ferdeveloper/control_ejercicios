@@ -55,8 +55,22 @@ public class EjercicioDAOImplHibernate implements EjercicioDAO {
     }
 
     @Override
-    public Ejercicio update(Ejercicio t) throws BussinessException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void update(Ejercicio ejercicio) throws BussinessException {
+
+        HibernateUtil.buildSessionFactory();
+
+        try {
+            HibernateUtil.openSessionAndBindToThread();
+            Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+            session.beginTransaction();
+            session.update(ejercicio);
+            session.getTransaction().commit();
+
+        } finally {
+            HibernateUtil.closeSessionAndUnbindFromThread();
+        }
+
+        //HibernateUtil.closeSessionFactory();
     }
 
     @Override
@@ -66,13 +80,21 @@ public class EjercicioDAOImplHibernate implements EjercicioDAO {
 
     @Override
     public List<Ejercicio> findAll() throws BussinessException {
-        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-        session.beginTransaction();
 
-        Query query = session.createQuery("FROM Ejercicio");
-        List<Ejercicio> ejercicios = query.list();
+        HibernateUtil.buildSessionFactory();
+        List<Ejercicio> ejercicios = null;
+
+        try {
+            HibernateUtil.openSessionAndBindToThread();
+            Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+
+            Query query = session.createQuery("FROM Ejercicio");
+            ejercicios = query.list();
+        } finally {
+            HibernateUtil.closeSessionAndUnbindFromThread();
+        }
 
         return ejercicios;
-    }
 
+    }
 }

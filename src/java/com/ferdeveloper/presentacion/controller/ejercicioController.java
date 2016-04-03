@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -96,6 +97,39 @@ public class ejercicioController {
                 Logger.getLogger(ejercicioController.class.getName()).log(Level.SEVERE, null, ex1);
             }
         }
+    }
 
+    @RequestMapping(value = "/Ejercicio", method = RequestMethod.PUT, consumes = "application/json", produces = "application/json")
+    public void update(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, @RequestBody String jsonEntrada) {
+        try {
+            Ejercicio ejercicio = (Ejercicio) jsonTransformer.fromJson(jsonEntrada, Ejercicio.class);
+            ejercicioService.update(ejercicio);
+            String jsonSalida = jsonTransformer.toJson(ejercicio);
+
+            httpServletResponse.setStatus(HttpServletResponse.SC_OK);
+            httpServletResponse.setContentType("application/json; charset=UTF-8");
+            httpServletResponse.getWriter().println(jsonSalida);
+
+        } catch (BussinessException ex) {
+            List<BussinessMessage> bussinessMessage = ex.getBussinessMessageList();
+            String jsonSalida = jsonTransformer.toJson(bussinessMessage);
+
+            httpServletResponse.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            httpServletResponse.setContentType("application/json; charset=UTF-8");
+            try {
+                httpServletResponse.getWriter().println(jsonSalida);
+            } catch (IOException ex1) {
+                Logger.getLogger(ejercicioController.class.getName()).log(Level.SEVERE, null, ex1);
+            }
+
+        } catch (Exception ex) {
+            httpServletResponse.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            httpServletResponse.setContentType("text/plain; charset=UTF-8");
+            try {
+                ex.printStackTrace(httpServletResponse.getWriter());
+            } catch (IOException ex1) {
+                Logger.getLogger(ejercicioController.class.getName()).log(Level.SEVERE, null, ex1);
+            }
+        }
     }
 }

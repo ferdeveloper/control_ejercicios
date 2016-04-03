@@ -34,16 +34,16 @@ function EjercicioService($http, $routeParams) {
 //        });
 //        return response;
 //    };
-//
-//    this.update = function (ejercicio) {
-//        var response = $http({
-//            method: 'PUT',
-//            url: '/control_ejercicios_api/api/ejercicio/',
-//            data: ejercicio
-//
-//        });
-//        return response;
-//    };
+
+    this.update = function (ejercicio) {
+        var response = $http({
+            method: 'PUT',
+            url: '/russafa/api/ejercicio',
+            data: ejercicio
+
+        });
+        return response;
+    };
 
 }
 EjercicioService.$inject = ['$http', '$routeParams'];

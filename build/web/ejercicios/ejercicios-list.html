@@ -1,5 +1,4 @@
 <!--<div ng-controller="ListController">-->
-    <!--<input type="text" ng-model="filtroCategoria" placeholder="filtrar por...">-->
     <br>
     <div class="container">
         <div class="row">
@@ -10,6 +9,8 @@
                         <option value="">Filtrar por...</option>
                         <option value="-fechaEjercicio">Fecha (Ult-Prim)</option>
                         <option value="fechaEjercicio">Fecha (Prim-Ult)</option>
+                        <option value="cursoEjercicio">Curso (A-Z)</option>
+                        <option value="-cursoEjercicio">Curso (Z-A)</option>
                         <option value="categoriaEjercicio">Categoria (A-Z)</option>
                         <option value="-categoriaEjercicio">Categoria (Z-A)</option>
                     </select>
@@ -34,9 +35,9 @@
                             <td>Ejercicio</td>
                             <td>Categoría</td>
                             <td>Fecha</td>
-                            <td>Ver</td>
+                            <td></td>
                     </thead>
-                    <tr ng-repeat="ejercicio in ejercicios| filter:buscador | orderBy:filtroCategoria:true" class="clickable-row" data-href='#/get/{{ejercicio.idEjercicio}}'>
+                    <tr ng-repeat="ejercicio in ejercicios| filter:buscador | orderBy:filtroCategoria" class="clickable-row" data-href='#/get/{{ejercicio.idEjercicio}}'>
                         <td>{{ejercicio.nombreEjercicio}}</td>
                         <td>{{ejercicio.categoriaEjercicio}} {{ejercicio.cursoEjercicio}}</td>
                         <td>{{ejercicio.fechaEjercicio| date:"longDate"}}</td>

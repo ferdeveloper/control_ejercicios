@@ -1,3 +1,4 @@
+<br>
 <div>
     <div class="span3 well formularioUpdate">
         <h2>Update</h2>
@@ -19,6 +20,10 @@
                 <input type="text" class="form-control" id="categoriaEjercicio" ng-model="ejercicio.categoriaEjercicio">
             </fieldset>
             <fieldset class="form-group">
+                <label for="cursoEjercicio">Curso</label>
+                <input type="text" class="form-control" id="categoriaEjercicio" ng-model="ejercicio.cursoEjercicio">
+            </fieldset>
+            <fieldset class="form-group">
                 <label for="fechaEjercicio">Fecha</label>
                 <input type="text" class="form-control" id="fechaEjercicio" ng-model="ejercicio.fechaEjercicio">
             </fieldset>
@@ -27,6 +32,8 @@
                 <textarea class="form-control" id="observacionesEjercicio" maxlength="295" rows="6" ng-model="ejercicio.observacionesEjercicio"></textarea>
             </fieldset>
             <input ng-click="actualizar()" type="submit" value="actualizar" class="btn btn-primary"/><br>
+            <a href="#/admin"><button class="btn btn-primary">Cancelar</button></a>
         </form>
     </div>
 </div>
+<br>
