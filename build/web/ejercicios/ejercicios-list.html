@@ -36,11 +36,11 @@
                             <td>Fecha</td>
                             <td>Ver</td>
                     </thead>
-                    <tr ng-repeat="ejercicio in ejercicios| filter:buscador | orderBy:filtroCategoria" class="clickable-row">
+                    <tr ng-repeat="ejercicio in ejercicios| filter:buscador | orderBy:filtroCategoria:true" class="clickable-row" data-href='#/get/{{ejercicio.idEjercicio}}'>
                         <td>{{ejercicio.nombreEjercicio}}</td>
                         <td>{{ejercicio.categoriaEjercicio}}</td>
                         <td>{{ejercicio.fechaEjercicio| date:"longDate"}}</td>
-                        <td><a href="#/get/{{ejercicio.idEjercicio}}"><button class="btn btn-primary">Ver Ejercicio </button></a></td>
+                        <td class="text-center"><a href="#/get/{{ejercicio.idEjercicio}}"><button class="btn btn-primary">Ver</button></a></td>
                     </tr>
                 </table>
             </div>

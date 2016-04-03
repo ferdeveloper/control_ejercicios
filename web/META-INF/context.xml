@@ -1,2 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context antiJARLocking="true" path="/russafa"/>
+<Context antiJARLocking="true" path="/russafa">
+
+  <Resource auth="Container" 
+            name="jdbc/control_ejercicios" 
+            type="javax.sql.DataSource" 
+            
+            driverClassName="com.mysql.jdbc.Driver" 
+            url="jdbc:mysql://localhost:3306/control_ejercicios" 
+            username="root" 
+            password="" 
+            
+            maxActive="100" 
+            maxIdle="30" 
+            maxWait="10000" 
+            
+            alidationQuery="SELECT 1 FROM dual"/>
+</Context>
