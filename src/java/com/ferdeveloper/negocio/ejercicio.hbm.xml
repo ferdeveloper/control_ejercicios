@@ -8,6 +8,8 @@
     <property name="nombreEjercicio" column="nombreEjercicio"/>
     <property name="descripcionEjercicio" column="descripcionEjercicio"/>
     <property name="categoriaEjercicio" column="categoriaEjercicio"/>
+    <property name="cursoEjercicio" column="cursoEjercicio"/>
+    <property name="fechaCreacion" column="fechaCreacion"/>
     <property name="fechaEjercicio" column="fechaEjercicio"/>
     <property name="observacionesEjercicio" column="observacionesEjercicio"/>
 </class>

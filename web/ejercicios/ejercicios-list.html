@@ -1,4 +1,4 @@
-<div ng-controller="ListController">
+<!--<div ng-controller="ListController">-->
     <!--<input type="text" ng-model="filtroCategoria" placeholder="filtrar por...">-->
     <br>
     <div class="container">
@@ -38,11 +38,12 @@
                     </thead>
                     <tr ng-repeat="ejercicio in ejercicios| filter:buscador | orderBy:filtroCategoria:true" class="clickable-row" data-href='#/get/{{ejercicio.idEjercicio}}'>
                         <td>{{ejercicio.nombreEjercicio}}</td>
-                        <td>{{ejercicio.categoriaEjercicio}}</td>
+                        <td>{{ejercicio.categoriaEjercicio}} {{ejercicio.cursoEjercicio}}</td>
                         <td>{{ejercicio.fechaEjercicio| date:"longDate"}}</td>
                         <td class="text-center"><a href="#/get/{{ejercicio.idEjercicio}}"><button class="btn btn-primary">Ver</button></a></td>
                     </tr>
                 </table>
             </div>
         </div>
+    </div>
 

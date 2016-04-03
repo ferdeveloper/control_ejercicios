@@ -16,34 +16,34 @@ function EjercicioService($http, $routeParams) {
         return response;
     };
 
-    this.delete = function (idEntidadBancaria) {
-        var response = $http(config = {
-            method: 'DELETE',
-            url: '/banco_api/api/entidadBancaria/' + idEntidadBancaria
-
-        });
-        return response;
-    };
-
-    this.insert = function (ejercicio) {
-        var response = $http({
-            method: 'POST',
-            url: '/control_ejercicios_api/api/ejercicio/',
-            data: ejercicio
-
-        });
-        return response;
-    };
-
-    this.update = function (ejercicio) {
-        var response = $http({
-            method: 'PUT',
-            url: '/control_ejercicios_api/api/ejercicio/',
-            data: ejercicio
-
-        });
-        return response;
-    };
+//    this.delete = function (idEntidadBancaria) {
+//        var response = $http(config = {
+//            method: 'DELETE',
+//            url: '/banco_api/api/entidadBancaria/' + idEntidadBancaria
+//
+//        });
+//        return response;
+//    };
+//
+//    this.insert = function (ejercicio) {
+//        var response = $http({
+//            method: 'POST',
+//            url: '/control_ejercicios_api/api/ejercicio/',
+//            data: ejercicio
+//
+//        });
+//        return response;
+//    };
+//
+//    this.update = function (ejercicio) {
+//        var response = $http({
+//            method: 'PUT',
+//            url: '/control_ejercicios_api/api/ejercicio/',
+//            data: ejercicio
+//
+//        });
+//        return response;
+//    };
 
 }
 EjercicioService.$inject = ['$http', '$routeParams'];
