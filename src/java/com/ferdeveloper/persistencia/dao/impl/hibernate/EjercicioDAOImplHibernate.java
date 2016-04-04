@@ -45,13 +45,22 @@ public class EjercicioDAOImplHibernate implements EjercicioDAO {
     }
 
     @Override
-    public Ejercicio create() throws BussinessException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public void insert(Ejercicio ejercicio) throws BussinessException {
+        HibernateUtil.buildSessionFactory();
 
-    @Override
-    public Ejercicio save(Ejercicio t) throws BussinessException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            HibernateUtil.openSessionAndBindToThread();
+            Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+            session.beginTransaction();
+            session.save(ejercicio);
+            session.getTransaction().commit();
+
+        } finally {
+            HibernateUtil.closeSessionAndUnbindFromThread();
+        }
+
+        //HibernateUtil.closeSessionFactory();
+        
     }
 
     @Override

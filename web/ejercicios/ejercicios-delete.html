@@ -1,28 +1,40 @@
-<div ng-controller="DeleteController">
+<br>
+<div>
     <div class="span3 well formularioUpdate">
-        <h2>Ejercicio</h2>
-        <form accept-charset="UTF-8" action="" method="post">
+        <h2>Update</h2>
+        <form accept-charset="UTF-8" id="formularioUpdate" action="" method="post" ng-controller="DeleteController">
+            <fieldset class="form-group">
+                <label for="idEjercicio">ID Ejercicio</label>
+                <input type="text" class="form-control" id="idEjercicio" ng-model="ejercicio.idEjercicio" ng-value="{{ejercicio.idEjercicio}}" ng-readonly="true">
+            </fieldset>
             <fieldset class="form-group">
                 <label for="nombreEjercicio">Nombre</label>
-                <input type="text" class="form-control" id="nombreEjercicio" value="{{ejercicio.nombreEjercicio}}">
+                <input type="text" class="form-control" id="nombreEjercicio" ng-model="ejercicio.nombreEjercicio" ng-value="{{ejercicio.nombreEjercicio}}" ng-readonly="true">
             </fieldset>
             <fieldset class="form-group">
                 <label for="descripcionEjercicio">Descripción</label>
-                <textarea class="form-control" id="descripcionEjercicio" maxlength="295" rows="6">{{ejercicio.descripcionEjercicio}}</textarea>
+                <textarea class="form-control" id="descripcionEjercicio" maxlength="295" rows="6" ng-model="ejercicio.descripcionEjercicio" ng-readonly="true"></textarea>
             </fieldset>
             <fieldset class="form-group">
                 <label for="categoriaEjercicio">Categoría</label>
-                <input type="text" class="form-control" id="categoriaEjercicio" value="{{ejercicio.categoriaEjercicio}}">
+                <input type="text" class="form-control" id="categoriaEjercicio" ng-model="ejercicio.categoriaEjercicio" ng-readonly="true">
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="cursoEjercicio">Curso</label>
+                <input type="text" class="form-control" id="categoriaEjercicio" ng-model="ejercicio.cursoEjercicio" ng-readonly="true">
             </fieldset>
             <fieldset class="form-group">
                 <label for="fechaEjercicio">Fecha</label>
-                <input type="text" class="form-control" id="fechaEjercicio" value="{{ejercicio.fechaEjercicio}}">
+                <input type="text" class="form-control" id="fechaEjercicio" ng-model="ejercicio.fechaEjercicio" ng-readonly="true">
             </fieldset>
             <fieldset class="form-group">
                 <label for="observacionesEjercicio">Observaciones</label>
-                <textarea class="form-control" id="observacionesEjercicio" maxlength="295" rows="6">{{ejercicio.observacionesEjercicio}}</textarea>
+                <textarea class="form-control" id="observacionesEjercicio" maxlength="295" rows="6" ng-model="ejercicio.observacionesEjercicio" ng-readonly="true"></textarea>
             </fieldset>
-            <input ng-click="borrar()" type="submit" value="Borrar" class="btn btn-primary"/><br>
+            <input ng-click="actualizar()" type="submit" value="actualizar" class="btn btn-primary"/>
+            <a href="#/admin"><button class="btn btn-danger">Cancelar</button></a>
         </form>
     </div>
 </div>
+<br>
+

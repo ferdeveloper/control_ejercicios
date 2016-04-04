@@ -25,13 +25,8 @@ public class EjercicioServiceImpl implements EjercicioService{
     }
 
     @Override
-    public Ejercicio create() throws BussinessException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Ejercicio save(Ejercicio t) throws BussinessException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void insert(Ejercicio ejercicio) throws BussinessException {
+        ejercicioDAO.insert(ejercicio);
     }
 
     @Override

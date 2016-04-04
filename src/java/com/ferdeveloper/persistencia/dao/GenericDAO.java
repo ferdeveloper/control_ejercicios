@@ -15,9 +15,7 @@ public interface GenericDAO <T>{
     
     T get(int id) throws BussinessException;
 
-    T create() throws BussinessException;
-
-    T save(T t) throws BussinessException;
+    void insert(T t) throws BussinessException;
     
     void update(T t) throws BussinessException;
 

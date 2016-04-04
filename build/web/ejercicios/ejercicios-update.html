@@ -4,10 +4,6 @@
         <h2>Update</h2>
         <form accept-charset="UTF-8" id="formularioUpdate" action="" method="post" ng-controller="UpdateController">
             <fieldset class="form-group">
-                <label for="idEjercicio">ID Ejercicio</label>
-                <input type="text" class="form-control" id="idEjercicio" ng-model="ejercicio.idEjercicio" ng-value="{{ejercicio.idEjercicio}}">
-            </fieldset>
-            <fieldset class="form-group">
                 <label for="nombreEjercicio">Nombre</label>
                 <input type="text" class="form-control" id="nombreEjercicio" ng-model="ejercicio.nombreEjercicio" ng-value="{{ejercicio.nombreEjercicio}}">
             </fieldset>
@@ -31,8 +27,8 @@
                 <label for="observacionesEjercicio">Observaciones</label>
                 <textarea class="form-control" id="observacionesEjercicio" maxlength="295" rows="6" ng-model="ejercicio.observacionesEjercicio"></textarea>
             </fieldset>
-            <input ng-click="actualizar()" type="submit" value="actualizar" class="btn btn-primary"/><br>
-            <a href="#/admin"><button class="btn btn-primary">Cancelar</button></a>
+            <input ng-click="actualizar()" type="submit" value="actualizar" class="btn btn-primary"/>
+            <a href="#/admin"><button class="btn btn-danger">Cancelar</button></a>
         </form>
     </div>
 </div>

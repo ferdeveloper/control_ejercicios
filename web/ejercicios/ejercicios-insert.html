@@ -1,4 +1,44 @@
+<br>
 <div>
+    <div class="span3 well formularioUpdate">
+        <h2>Insertar</h2>
+        <form accept-charset="UTF-8" name="formularioInsert" action="" method="post">
+            <fieldset class="form-group">
+                <label for="nombreEjercicio">Nombre</label>
+                <input type="text" class="form-control" id="nombreEjercicio" ng-model="ejercicio.nombreEjercicio" ng-value="{{ejercicio.nombreEjercicio}}" ng-minlength="3" required>
+                <span class="validacion" ng-show="formularioInsert.nombreEjercicio.$error.required && formularioInsert.nombreEjercicio.$dirty">El campo nombre es obligatorio. </span>
+                <span class="validacion" ng-show="formularioInsert.nombreEjercicio.$error.minlength">El nombre debe tener mínimo 6 carácteres.</span>
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="descripcionEjercicio">Descripción</label>
+                <textarea class="form-control" id="descripcionEjercicio" maxlength="295" rows="6" ng-model="ejercicio.descripcionEjercicio"></textarea>
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="categoriaEjercicio">Categoría</label>
+                <input type="text" class="form-control" id="categoriaEjercicio" ng-model="ejercicio.categoriaEjercicio">
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="cursoEjercicio">Curso</label>
+                <input type="text" class="form-control" id="categoriaEjercicio" ng-model="ejercicio.cursoEjercicio">
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="fechaEjercicio">Fecha</label>
+                <input type="text" class="form-control" id="fechaEjercicio" ng-model="ejercicio.fechaEjercicio">
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="observacionesEjercicio">Observaciones</label>
+                <textarea class="form-control" id="observacionesEjercicio" maxlength="295" rows="6" ng-model="ejercicio.observacionesEjercicio"></textarea>
+            </fieldset>
+            <input ng-click="insertar()" type="submit" value="Insertar" class="btn btn-primary" ng-disabled="formularioInsert.$invalid"/>
+            <a href="#/admin"><button class="btn btn-danger">Cancelar</button></a>
+        </form>
+    </div>
+</div>
+<br>
+
+
+
+<!--<div>
     <div class="span3 well formularioUpdate" ng-controller="InsertController">
         <h2>Ejercicio</h2>
         <form accept-charset="UTF-8" name="formularioInsert" id="formularioInsert" action="" method="post">
@@ -27,4 +67,4 @@
             <input ng-click="insertar()" type="submit" value="Insertar" class="btn btn-primary" ng-disabled="formularioInsert.$invalid"/><br>
         </form>
     </div>
-</div>
+</div>-->
