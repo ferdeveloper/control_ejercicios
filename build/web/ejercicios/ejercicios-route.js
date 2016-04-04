@@ -14,6 +14,11 @@ app.config(['$routeProvider', function ($routeProvider) {
             templateUrl: "ejercicios/ejercicios-get.html",
             controller: "GetController"
         });
+        
+        $routeProvider.when('/get-admin/:idEjercicio', {
+            templateUrl: "ejercicios/ejercicios-get-admin.html",
+            controller: "GetController"
+        });
 
         $routeProvider.when('/insert/', {
             templateUrl: "ejercicios/ejercicios-insert.html",

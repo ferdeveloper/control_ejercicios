@@ -41,7 +41,9 @@
                         <td>{{ejercicio.nombreEjercicio}}</td>
                         <td>{{ejercicio.categoriaEjercicio}} {{ejercicio.cursoEjercicio}}</td>
                         <td>{{ejercicio.fechaEjercicio| date:"longDate"}}</td>
-                        <td class="text-center"><a href="#/get/{{ejercicio.idEjercicio}}"><button class="btn btn-primary">Ver</button></a></td>
+                        <td class="text-center"><a href="#/get/{{ejercicio.idEjercicio}}">
+                                <button class="btn btn-primary"><span class="glyphicon glyphicon-eye-open"></span></button></a>
+                        </td>
                     </tr>
                 </table>
             </div>
