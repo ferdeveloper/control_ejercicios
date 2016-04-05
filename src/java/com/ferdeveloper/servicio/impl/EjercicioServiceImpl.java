@@ -35,8 +35,8 @@ public class EjercicioServiceImpl implements EjercicioService{
     }
 
     @Override
-    public void delete(int id) throws BussinessException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void delete(Ejercicio ejercicio) throws BussinessException {
+        ejercicioDAO.delete(ejercicio);
     }
 
     @Override

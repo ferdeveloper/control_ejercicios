@@ -60,7 +60,6 @@ public class EjercicioDAOImplHibernate implements EjercicioDAO {
         }
 
         //HibernateUtil.closeSessionFactory();
-        
     }
 
     @Override
@@ -83,8 +82,21 @@ public class EjercicioDAOImplHibernate implements EjercicioDAO {
     }
 
     @Override
-    public void delete(int id) throws BussinessException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void delete(Ejercicio ejercicio) throws BussinessException {
+        HibernateUtil.buildSessionFactory();
+
+        try {
+            HibernateUtil.openSessionAndBindToThread();
+            Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+            session.beginTransaction();
+            session.delete(ejercicio);
+            session.getTransaction().commit();
+
+        } finally {
+            HibernateUtil.closeSessionAndUnbindFromThread();
+        }
+
+        //HibernateUtil.closeSessionFactory();
     }
 
     @Override

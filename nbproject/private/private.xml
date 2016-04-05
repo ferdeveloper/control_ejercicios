@@ -3,13 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/fernandoarenasdev/Desktop/PROYECTOS/control_ejercicios/russafa/web/ejercicios/ejercicios-get-admin.html</file>
-            <file>file:/Users/fernandoarenasdev/Desktop/PROYECTOS/control_ejercicios/russafa/web/ejercicios/ejercicio-service.js</file>
-            <file>file:/Users/fernandoarenasdev/Desktop/PROYECTOS/control_ejercicios/russafa/web/ejercicios/ejercicios-list.html</file>
-            <file>file:/Users/fernandoarenasdev/Desktop/PROYECTOS/control_ejercicios/russafa/web/css/index.css</file>
-            <file>file:/Users/fernandoarenasdev/Desktop/PROYECTOS/control_ejercicios/russafa/web/ejercicios/ejercicios-admin.html</file>
-            <file>file:/Users/fernandoarenasdev/Desktop/PROYECTOS/control_ejercicios/russafa/web/ejercicios/ejercicios-route.js</file>
-            <file>file:/Users/fernandoarenasdev/Desktop/PROYECTOS/control_ejercicios/russafa/web/controladores.js</file>
+            <file>file:/Users/fernandoarenasdev/Desktop/PROYECTOS/control_ejercicios/russafa/src/java/com/ferdeveloper/persistencia/dao/EjercicioDAO.java</file>
+            <file>file:/Users/fernandoarenasdev/Desktop/PROYECTOS/control_ejercicios/russafa/src/java/com/ferdeveloper/servicio/EjercicioService.java</file>
+            <file>file:/Users/fernandoarenasdev/Desktop/PROYECTOS/control_ejercicios/russafa/src/java/com/ferdeveloper/servicio/GenericService.java</file>
+            <file>file:/Users/fernandoarenasdev/Desktop/PROYECTOS/control_ejercicios/russafa/src/java/com/ferdeveloper/persistencia/dao/GenericDAO.java</file>
+            <file>file:/Users/fernandoarenasdev/Desktop/PROYECTOS/control_ejercicios/russafa/src/java/com/ferdeveloper/servicio/impl/EjercicioServiceImpl.java</file>
         </group>
     </open-files>
 </project-private>

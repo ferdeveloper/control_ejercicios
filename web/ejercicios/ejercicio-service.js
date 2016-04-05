@@ -8,10 +8,10 @@ function EjercicioService($http, $routeParams) {
         return response;
     };
 
-    this.get = function (idEntidadBancaria) {
+    this.get = function (idEjercicio) {
         var response = $http(config = {
             method: 'GET',
-            url: '/russafa/api/Ejercicio/' + idEntidadBancaria
+            url: '/russafa/api/Ejercicio/' + idEjercicio
 
         });
         return response;
@@ -37,15 +37,14 @@ function EjercicioService($http, $routeParams) {
         return response;
     };
 
+    this.delete = function (idEjercicio) {
+        var response = $http(config = {
+            method: 'DELETE',
+            url: '/russafa/api/Ejercicio/' + idEjercicio
 
-//    this.delete = function (idEntidadBancaria) {
-//        var response = $http(config = {
-//            method: 'DELETE',
-//            url: '/banco_api/api/entidadBancaria/' + idEntidadBancaria
-//
-//        });
-//        return response;
-//    };
+        });
+        return response;
+    };
 
 }
 EjercicioService.$inject = ['$http', '$routeParams'];

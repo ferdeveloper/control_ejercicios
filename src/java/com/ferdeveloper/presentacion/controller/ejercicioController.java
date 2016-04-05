@@ -166,4 +166,34 @@ public class ejercicioController {
             }
         }
     }
+
+    @RequestMapping(value = "/Ejercicio/{idEjercicio}", method = RequestMethod.DELETE, consumes = "application/json", produces = "application/json")
+    public void delete(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, @PathVariable("idEjercicio") int idEjercicio) {
+        try {
+            Ejercicio ejercicio = (Ejercicio) ejercicioService.get(idEjercicio);
+            ejercicioService.delete(ejercicio);
+            httpServletResponse.setStatus(HttpServletResponse.SC_NO_CONTENT);
+
+        } catch (BussinessException ex) {
+            List<BussinessMessage> bussinessMessage = ex.getBussinessMessageList();
+            String jsonSalida = jsonTransformer.toJson(bussinessMessage);
+
+            httpServletResponse.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            httpServletResponse.setContentType("application/json; charset=UTF-8");
+            try {
+                httpServletResponse.getWriter().println(jsonSalida);
+            } catch (IOException ex1) {
+                Logger.getLogger(ejercicioController.class.getName()).log(Level.SEVERE, null, ex1);
+            }
+
+        } catch (Exception ex) {
+            httpServletResponse.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            httpServletResponse.setContentType("text/plain; charset=UTF-8");
+            try {
+                ex.printStackTrace(httpServletResponse.getWriter());
+            } catch (IOException ex1) {
+                Logger.getLogger(ejercicioController.class.getName()).log(Level.SEVERE, null, ex1);
+            }
+        }
+    }
 }

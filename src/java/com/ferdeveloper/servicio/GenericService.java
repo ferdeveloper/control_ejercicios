@@ -20,7 +20,7 @@ public interface GenericService<T> {
 
     void update(T t) throws BussinessException;
 
-    void delete(int id) throws BussinessException;
+    void delete(T t) throws BussinessException;
 
     List<T> findAll() throws BussinessException;
 }
