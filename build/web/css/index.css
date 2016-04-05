@@ -165,7 +165,7 @@ nav .login{
 }
 
 @media (max-width: 768px) { 
-   .well{
+    .well{
         width: 100%;
     } 
 }
