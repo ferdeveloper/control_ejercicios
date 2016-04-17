@@ -17,6 +17,7 @@ function InsertController($scope, ejercicioService, $routeParams, $http, $locati
             alert("Hay datos inválidos");
         }
     };
+    
 }
 app.controller("InsertController", InsertController);
 //

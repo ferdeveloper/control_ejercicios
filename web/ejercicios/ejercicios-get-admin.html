@@ -1,6 +1,11 @@
 <div ng-controller="GetController" class="datosEjercicio">
     <br>
     <div class="span3 well">
+        <div class="text-right">
+            <a href="#/admin">
+                <button class="btn btn-default"><span class="glyphicon glyphicon-remove"></span></button>
+            </a>
+        </div>
         <label>Ejercicio</label>
         <div class="container_get">
             <p>{{ejercicio.nombreEjercicio}}</p>
@@ -34,12 +39,9 @@
                 <button class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></button>
             </a>
             <a href="#/delete/{{ejercicio.idEjercicio}}">
-                <button class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></a>
-            <a href="#/admin">
-                <button class="btn btn-default"><span class="glyphicon glyphicon-remove"></span></button>
+                <button class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
             </a>
         </div>
-
     </div>
     <br>
 </div>

@@ -1,7 +1,12 @@
 <br>
 <div>
     <div class="span3 well formularioUpdate">
-        <h2>Delete</h2>
+        <div class="text-right">
+            <a href="#/admin">
+                <button class="btn btn-default"><span class="glyphicon glyphicon-remove"></span></button>
+            </a>
+        </div>
+
         <form accept-charset="UTF-8" id="formularioUpdate" action="" method="post" ng-controller="DeleteController">
             <fieldset class="form-group">
                 <label for="idEjercicio">ID Ejercicio</label>
@@ -32,9 +37,9 @@
                 <textarea class="form-control" id="observacionesEjercicio" maxlength="295" rows="6" ng-model="ejercicio.observacionesEjercicio" ng-readonly="true"></textarea>
             </fieldset>
             <div class="text-right">
-                <button ng-click="borrar()" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
+
                 <a href="#/admin">
-                    <button class="btn btn-default"><span class="glyphicon glyphicon-remove"></span></button>
+                    <button ng-click="borrar()" class="btn btn-danger">Borrar</button>
                 </a>
             </div>
         </form>

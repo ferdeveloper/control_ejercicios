@@ -1,7 +1,9 @@
 <br>
 <div>
     <div class="span3 well formularioUpdate">
-        <h2>Insertar</h2>
+        <div class="text-right">
+            <a href="#/admin"><button class="btn btn-default"><span class="glyphicon glyphicon-remove"></span></button></a>
+        </div>
         <form accept-charset="UTF-8" name="formularioInsert" action="" method="post">
             <fieldset class="form-group">
                 <label for="nombreEjercicio">Nombre</label>
@@ -21,6 +23,7 @@
                 <label for="cursoEjercicio">Curso</label>
                 <input type="text" class="form-control" id="categoriaEjercicio" ng-model="ejercicio.cursoEjercicio">
             </fieldset>
+            
             <fieldset class="form-group">
                 <label for="fechaEjercicio">Fecha</label>
                 <input type="text" class="form-control" id="fechaEjercicio" ng-model="ejercicio.fechaEjercicio">
@@ -29,8 +32,9 @@
                 <label for="observacionesEjercicio">Observaciones</label>
                 <textarea class="form-control" id="observacionesEjercicio" maxlength="295" rows="6" ng-model="ejercicio.observacionesEjercicio"></textarea>
             </fieldset>
-            <input ng-click="insertar()" type="submit" value="Insertar" class="btn btn-primary" ng-disabled="formularioInsert.$invalid"/>
-            <a href="#/admin"><button class="btn btn-danger">Cancelar</button></a>
+            <div class="text-right">
+                <input ng-click="insertar()" type="submit" value="Insertar" class="btn btn-primary" ng-disabled="formularioInsert.$invalid"/>
+            </div>
         </form>
     </div>
 </div>

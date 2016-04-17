@@ -35,6 +35,7 @@
                             <th></th>
                             <th>Ejercicio</th>
                             <th>Categoría</th>
+                            <th>Curso</th>
                             <th>Fecha</th>
                     </thead>
                     <tr ng-repeat="ejercicio in ejercicios| filter:buscador | orderBy:filtroCategoria" class="clickable-row" data-href='#/get/{{ejercicio.idEjercicio}}'>
@@ -42,7 +43,8 @@
                                 <button class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span></button></a>
                         </td>
                         <td>{{ejercicio.nombreEjercicio}}</td>
-                        <td>{{ejercicio.categoriaEjercicio}} {{ejercicio.cursoEjercicio}}</td>
+                        <td>{{ejercicio.categoriaEjercicio}}</td>
+                        <td>{{ejercicio.cursoEjercicio}}</td>
                         <td>{{ejercicio.fechaEjercicio| date:"longDate"}}</td>
 
                     </tr>
