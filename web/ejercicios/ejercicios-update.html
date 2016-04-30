@@ -23,7 +23,9 @@
             </fieldset>
             <fieldset class="form-group">
                 <label for="fechaEjercicio">Fecha</label>
-                <input type="text" class="form-control" id="fechaEjercicio" ng-model="ejercicio.fechaEjercicio">
+                <datepicker>
+                    <input id="fechaEjercicio" ng-change="changeDatepickerDate()" class="form-control" ng-model="ejercicio.fechaEjercicio"/>
+                </datepicker>                                                     
             </fieldset>
             <fieldset class="form-group">
                 <label for="observacionesEjercicio">Observaciones</label>

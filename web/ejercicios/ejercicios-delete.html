@@ -37,31 +37,18 @@
                 <textarea class="form-control" id="observacionesEjercicio" maxlength="295" rows="6" ng-model="ejercicio.observacionesEjercicio" ng-readonly="true"></textarea>
             </fieldset>
             <div class="text-right">
+                <div ng-controller="FinalDeleteController" class="container">
+                    <button ng-click="toggleModal()" class="btn btn-danger">Borrar</button>
 
-                <a href="#/admin">
-                    <button ng-click="borrar()" class="btn btn-danger">Borrar</button>
-                </a>
+                    <modal title="Login form" visible="showModal">
+                        <form role="form">
+                            <p>Seguro que desea borrar el ejercicio {{ejercicio.nombreEjercicio}}</p>
+                            <button ng-click="borrar()" class="btn btn-danger">Borrar</button>
+                        </form>
+                    </modal>
+                </div>
             </div>
         </form>
     </div>
 </div>
 <br>
-
-<div ng-controller="MainCtrl" class="container">
-  <h1>Modal example</h1>
-  <button ng-click="toggleModal()" class="btn btn-default">Open modal</button>
-    
-  <modal title="Login form" visible="showModal">
-    <form role="form">
-      <div class="form-group">
-        <label for="email">Email address</label>
-        <input type="email" class="form-control" id="email" placeholder="Enter email" />
-      </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" class="form-control" id="password" placeholder="Password" />
-      </div>
-      <button type="submit" class="btn btn-default">Submit</button>
-    </form>
-  </modal>
-</div>

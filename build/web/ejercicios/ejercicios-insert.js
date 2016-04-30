@@ -1,7 +1,16 @@
 InsertController.$inject = ["$scope", "ejercicioService", "$routeParams", '$http', '$location'];
 function InsertController($scope, ejercicioService, $routeParams, $http, $location) {
 
+    var fechaFormateada;
+    
+    $scope.changeDatepickerDate = function () {
+       fechaFormateada = new Date($scope.ejercicio.fechaEjercicio);
+       $scope.ejercicio.fechaEjercicio = fechaFormateada.format("russafaDate"); 
+    };
+
     $scope.insertar = function () {
+        $scope.ejercicio.fechaEjercicio = fechaFormateada.format("isoDate");
+        
         if ($scope.formularioInsert.$valid) {
             ejercicioService.insert($scope.ejercicio).then(function (result) {
                 alert("Insertado con éxito el ejercicio: " + $scope.ejercicio.nombreEjercicio) + "\n Recargando...";
@@ -20,35 +29,3 @@ function InsertController($scope, ejercicioService, $routeParams, $http, $locati
     
 }
 app.controller("InsertController", InsertController);
-//
-////InsertController.$inject = ["$scope", "ejercicioService", "$location"];
-//function InsertController($scope, ejercicioService, $location) {
-//
-//    $scope.ejercicio = {};
-//    $scope.date = new Date();
-//    $scope.fechaActual = $scope.date.toJSON();
-//
-//    $scope.insertar = function () {
-//        response = ejercicioService.insert($scope.ejercicio);
-//
-//        response.success(function (data, status, headers, config) {
-//            alert("Insertado.");
-//            if ($scope.formularioInsert.$valid) {
-//                alert("Los datos aqui se habrían enviado al servidor  y estarían validados en la parte cliente");
-//            } else {
-//                alert("Hay datos inválidos");
-//            }
-//            //$location.url("/admin")
-//
-//        }).error(function (data, status, headers, config) {
-//            if (status === 400) {
-//                $scope.errores = data;
-//            } else {
-//                alert("Ha fallado la petición HTTP. Estado HTTP: " + status);
-//
-//            }
-//
-//        });
-//    };
-//}
-

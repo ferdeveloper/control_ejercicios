@@ -5,7 +5,6 @@ app.controller("ListController", ['$scope', '$log', '$http', function ($scope, $
             method: 'GET',
             url: '/russafa/api/Ejercicios/'
         }).success(function (data, status, headers, config) {
-            console.log('Correcto');
             $scope.ejercicios = data;
        
         }).error(function (data, status, headers, config) {

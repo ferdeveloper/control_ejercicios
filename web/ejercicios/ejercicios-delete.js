@@ -9,8 +9,10 @@ function DeleteController($scope, ejercicioService, $routeParams, $http, $locati
     }).error(function (data, status, headers, config) {
         alert("Ha fallado la petición. Estado HTTP:" + status);
     });
+    
 
     $scope.borrar = function () {
+        element.modal('hide');
         ejercicioService.delete($scope.ejercicio.idEjercicio).then(function (result) {
             alert("Borrado con éxito el ejercicio: " + $scope.ejercicio.nombreEjercicio) + "\n Recargando...";
             $location.url("/admin");
