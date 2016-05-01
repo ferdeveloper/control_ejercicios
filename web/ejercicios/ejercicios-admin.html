@@ -3,9 +3,36 @@
     <div class="row">
         <div class="col-md-3">
             <div class="form-group">
+                <br>
+                <div id="buscador">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Buscar" ng-model="buscador"/>
+                        <span class="input-group-btn">
+                            <button class="btn btn-info btn-lg" type="button" disabled>
+                                <i class="glyphicon glyphicon-search"></i>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+                <br>
 
+                <select name="categoriaEjercicio" id="categoriaEjercicio" ng-model="buscarCategoria" class="form-control">
+                    <option value="">Buscar categoría</option>
+                    <option 
+                        ng-repeat="option in categoria.categoriasDisponibles" 
+                        value="{{option.name}}">
+                        {{option.name}}
+                    </option>
+                </select>
+                <br>
+                
+                <select name="cursoEjercicio" id="cursoEjercicio" ng-model="buscarCurso" class="form-control">
+                    <option value="">Buscar curso</option>
+                    <option ng-repeat="option in curso.cursosDisponibles" value="{{option.name}}">{{option.name}}</option>
+                </select>
+                <br>
                 <select class="form-control" id="sel1" ng-model="filtroCategoria">
-                    <option value="">Filtrar por...</option>
+                    <option value="">Ordenar por...</option>
                     <option value="-fechaEjercicio">Fecha (Ult-Prim)</option>
                     <option value="fechaEjercicio">Fecha (Prim-Ult)</option>
                     <option value="cursoEjercicio">Curso (A-Z)</option>
@@ -15,18 +42,9 @@
                 </select>
             </div>
 
-            <div id="buscador">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Buscar" ng-model="buscador"/>
-                    <span class="input-group-btn">
-                        <button class="btn btn-info btn-lg" type="button" disabled>
-                            <i class="glyphicon glyphicon-search"></i>
-                        </button>
-                    </span>
-                </div>
-            </div>
-            <a href="#/insert/"><button class="btn btn-primary">Insertar nuevo</button></a>
+            <a href="#/insert/"><button class="btn btn-primary btn-insertar">Insertar nuevo</button></a>
         </div>
+        <br>
 
 
 
@@ -40,7 +58,12 @@
                         <th>Curso</th>
                         <th>Fecha</th>
                 </thead>
-                <tr ng-repeat="ejercicio in ejercicios| filter:buscador | orderBy:filtroCategoria" class="clickable-row" data-href='#/get/{{ejercicio.idEjercicio}}'>
+                <tr ng-repeat="ejercicio in ejercicios
+                                    | filter:buscador 
+                            | orderBy:filtroCategoria 
+                            | filter:buscarCurso 
+                            | filter:buscarCategoria" 
+                    class="clickable-row" data-href='#/get/{{ejercicio.idEjercicio}}'>
                     <td class="text-center"><a href="#/get-admin/{{ejercicio.idEjercicio}}">
                             <button class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span></button></a><a href="#/update/{{ejercicio.idEjercicio}}">
                             <button class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></button></a><a href="#/delete/{{ejercicio.idEjercicio}}">

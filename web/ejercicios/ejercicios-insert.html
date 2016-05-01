@@ -17,11 +17,15 @@
             </fieldset>
             <fieldset class="form-group">
                 <label for="categoriaEjercicio">Categoría</label>
-                <input type="text" class="form-control" id="categoriaEjercicio" ng-model="ejercicio.categoriaEjercicio">
+                <select name="categoriaEjercicio" id="categoriaEjercicio" ng-model="ejercicio.categoriaEjercicio" class="form-control">
+                    <option ng-repeat="option in categoria.categoriasDisponibles" value="{{option.name}}">{{option.name}}</option>
+                </select>
             </fieldset>
             <fieldset class="form-group">
                 <label for="cursoEjercicio">Curso</label>
-                <input type="text" class="form-control" id="categoriaEjercicio" ng-model="ejercicio.cursoEjercicio">
+                <select name="cursoEjercicio" id="cursoEjercicio" ng-model="ejercicio.cursoEjercicio" class="form-control">
+                    <option ng-repeat="option in curso.cursosDisponibles" value="{{option.name}}">{{option.name}}</option>
+                </select>
             </fieldset>
 
             <fieldset class="form-group">

@@ -1,16 +1,38 @@
 InsertController.$inject = ["$scope", "ejercicioService", "$routeParams", '$http', '$location'];
 function InsertController($scope, ejercicioService, $routeParams, $http, $location) {
 
+    $scope.categoria = {
+        categoriasDisponibles: [
+            {id: '1', name: 'Solfeo'},
+            {id: '2', name: 'Percusión'},
+            {id: '3', name: 'Dolçaina'},
+            {id: '4', name: 'Conjunto percusión'},
+            {id: '5', name: 'Conjunto dolçaina'},
+            {id: '6', name: 'Conjunto intrumental'}
+        ]
+    };
+
+    $scope.curso = {
+        cursosDisponibles: [
+            {id: '1', name: 'Infantil'},
+            {id: '2', name: 'Primero'},
+            {id: '3', name: 'Segundo'},
+            {id: '4', name: 'Tercero'},
+            {id: '5', name: 'Cuarto'},
+            {id: '6', name: 'Adulto'}
+        ]
+    };
+
     var fechaFormateada;
-    
+
     $scope.changeDatepickerDate = function () {
-       fechaFormateada = new Date($scope.ejercicio.fechaEjercicio);
-       $scope.ejercicio.fechaEjercicio = fechaFormateada.format("russafaDate"); 
+        fechaFormateada = new Date($scope.ejercicio.fechaEjercicio);
+        $scope.ejercicio.fechaEjercicio = fechaFormateada.format("russafaDate");
     };
 
     $scope.insertar = function () {
         $scope.ejercicio.fechaEjercicio = fechaFormateada.format("isoDate");
-        
+
         if ($scope.formularioInsert.$valid) {
             ejercicioService.insert($scope.ejercicio).then(function (result) {
                 alert("Insertado con éxito el ejercicio: " + $scope.ejercicio.nombreEjercicio) + "\n Recargando...";
@@ -26,6 +48,6 @@ function InsertController($scope, ejercicioService, $routeParams, $http, $locati
             alert("Hay datos inválidos");
         }
     };
-    
+
 }
 app.controller("InsertController", InsertController);
