@@ -16,6 +16,7 @@
         <property name="hibernate.show_sql">true</property>
     
         <mapping class="" file="" jar="" package="" resource="com/ferdeveloper/negocio/ejercicio.hbm.xml"/>
+        <mapping class="" file="" jar="" package="" resource="com/ferdeveloper/negocio/usuario.hbm.xml"/>
         
     </session-factory>
 </hibernate-configuration>

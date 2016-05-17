@@ -1,6 +1,5 @@
 app.controller("ListController", ['$scope', '$log', '$http', function ($scope, $log, $http) {
 
-
     $scope.categoria = {
         categoriasDisponibles: [
             {id: '1', name: 'Solfeo'},

@@ -1,21 +1,9 @@
-<!--<div ng-controller="ListController">-->
-    <br>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <div class="form-group">
-
-                    <select class="form-control" id="sel1" ng-model="filtroCategoria">
-                        <option value="">Filtrar por...</option>
-                        <option value="-fechaEjercicio">Fecha (Ult-Prim)</option>
-                        <option value="fechaEjercicio">Fecha (Prim-Ult)</option>
-                        <option value="cursoEjercicio">Curso (A-Z)</option>
-                        <option value="-cursoEjercicio">Curso (Z-A)</option>
-                        <option value="categoriaEjercicio">Categoria (A-Z)</option>
-                        <option value="-categoriaEjercicio">Categoria (Z-A)</option>
-                    </select>
-                </div>
-
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-group">
+                <br>
                 <div id="buscador">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Buscar" ng-model="buscador"/>
@@ -26,30 +14,66 @@
                         </span>
                     </div>
                 </div>
+                <br>
+
+                <select name="categoriaEjercicio" id="categoriaEjercicio" ng-model="buscarCategoria" class="form-control">
+                    <option value="">Buscar categoría</option>
+                    <option 
+                        ng-repeat="option in categoria.categoriasDisponibles" 
+                        value="{{option.name}}">
+                        {{option.name}}
+                    </option>
+                </select>
+                <br>
+                
+                <select name="cursoEjercicio" id="cursoEjercicio" ng-model="buscarCurso" class="form-control">
+                    <option value="">Buscar curso</option>
+                    <option ng-repeat="option in curso.cursosDisponibles" value="{{option.name}}">{{option.name}}</option>
+                </select>
+                <br>
+                <select class="form-control" id="sel1" ng-model="filtroCategoria">
+                    <option value="">Ordenar por...</option>
+                    <option value="-fechaEjercicio">Fecha (Ult-Prim)</option>
+                    <option value="fechaEjercicio">Fecha (Prim-Ult)</option>
+                    <option value="cursoEjercicio">Curso (A-Z)</option>
+                    <option value="-cursoEjercicio">Curso (Z-A)</option>
+                    <option value="categoriaEjercicio">Categoria (A-Z)</option>
+                    <option value="-categoriaEjercicio">Categoria (Z-A)</option>
+                </select>
             </div>
 
-            <div class="col-md-9">
-                <table class="table table-bordered table-striped table-hover table-responsive">
-                    <thead class="thead-inverse">
-                        <tr>
-                            <th></th>
-                            <th>Ejercicio</th>
-                            <th>Categoría</th>
-                            <th>Curso</th>
-                            <th>Fecha</th>
-                    </thead>
-                    <tr ng-repeat="ejercicio in ejercicios| filter:buscador | orderBy:filtroCategoria" class="clickable-row" data-href='#/get/{{ejercicio.idEjercicio}}'>
-                                                <td class="text-center"><a href="#/get/{{ejercicio.idEjercicio}}">
-                                <button class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span></button></a>
-                        </td>
-                        <td>{{ejercicio.nombreEjercicio}}</td>
-                        <td>{{ejercicio.categoriaEjercicio}}</td>
-                        <td>{{ejercicio.cursoEjercicio}}</td>
-                        <td>{{ejercicio.fechaEjercicio| date:"longDate"}}</td>
+        </div>
+        <br>
 
-                    </tr>
-                </table>
-            </div>
+
+
+        <div class="col-md-9">
+            <table class="table table-bordered table-striped table-hover table-responsive">
+                <thead class="thead-inverse">
+                    <tr>
+                        <th></th>
+                        <th>Ejercicio</th>
+                        <th>Categoría</th>
+                        <th>Curso</th>
+                        <th>Fecha</th>
+                </thead>
+                <tr ng-repeat="ejercicio in ejercicios
+                            | filter:buscador 
+                            | orderBy:filtroCategoria 
+                            | filter:buscarCurso 
+                            | filter:buscarCategoria" 
+                    class="clickable-row" data-href='#/get/{{ejercicio.idEjercicio}}'>
+                    <td class="text-center"><a href="#/get/{{ejercicio.idEjercicio}}">
+                            <button class="btn btn-default"><span class="glyphicon glyphicon-eye-open"></span></button></a>
+                    </td>
+
+                    <td>{{ejercicio.nombreEjercicio}}</td>
+                    <td>{{ejercicio.categoriaEjercicio}}</td>
+                    <td>{{ejercicio.cursoEjercicio}}</td>
+                    <td>{{ejercicio.fechaEjercicio| date:"longDate"}}</td>
+
+                </tr>
+            </table>
         </div>
     </div>
-
+</div>

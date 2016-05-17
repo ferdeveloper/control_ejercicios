@@ -1,50 +1,50 @@
-<div ng-controller="GetController" class="datosEjercicio">
-    <br>
-    <div class="span3 well">
+<br>
+<div>
+    <div class="span3 well formularioUpdate">
         <div class="text-right">
-            <a href="#/admin">
-                <button class="btn btn-default"><span class="glyphicon glyphicon-remove"></span></button>
-            </a>
+            <a href="#/admin"><button class="btn btn-default"><span class="glyphicon glyphicon-remove"></span></button></a>
         </div>
-        <label>Ejercicio</label>
-        <div class="container_get">
-            <p>{{ejercicio.nombreEjercicio}}</p>
-        </div>
-        <label>Descripción</label>
-        <div class="container_get">
-            <p>{{ejercicio.descripcionEjercicio}}</p>
-        </div>
-        <label>Categoría</label>
-        <div class="container_get">
-            <p>{{ejercicio.categoriaEjercicio}}</p>
-        </div>
-        <label>Curso</label>
-        <div class="container_get">
-            <p>{{ejercicio.cursoEjercicio}}</p>
-        </div>
-        <label>Fecha creación</label>
-        <div class="container_get">
-            <p>{{ejercicio.fechaCreacion}}</p>
-        </div>
-        <label>Fecha ejercicio</label>
-        <div class="container_get">
-            <p>{{ejercicio.fechaEjercicio}}</p>
-        </div>
-        <label>Observaciones</label>
-        <div class="container_get">
-            <p>{{ejercicio.observacionesEjercicio}}</p>
-        </div>
-        <div class="text-right">
-            <a href="#/update/{{ejercicio.idEjercicio}}">
-                <button class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></button>
-            </a>
-            <a href="#/delete/{{ejercicio.idEjercicio}}">
-                <button class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
-            </a>
-        </div>
+        <form accept-charset="UTF-8" name="formularioInsert" action="" method="post">
+            <fieldset class="form-group">
+                <label for="nombreEjercicio">Nombre</label>
+                <input type="text" class="form-control" id="nombreEjercicio" ng-model="ejercicio.nombreEjercicio" disabled>
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="descripcionEjercicio">Descripción</label>
+                <textarea class="form-control" id="descripcionEjercicio" maxlength="295" rows="6" ng-model="ejercicio.descripcionEjercicio" disabled></textarea>
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="nombreEjercicio">Clase</label>
+                <input type="text" class="form-control" id="nombreEjercicio" ng-model="ejercicio.categoriaEjercicio" disabled>
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="nombreEjercicio">Curso</label>
+                <input type="text" class="form-control" id="nombreEjercicio" ng-model="ejercicio.cursoEjercicio" disabled>
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="nombreEjercicio">Fecha creación</label>
+                <input type="text" class="form-control" id="nombreEjercicio" ng-model="ejercicio.fechaCreacion" disabled>
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="nombreEjercicio">Fecha ejercicio</label>
+                <input type="text" class="form-control" id="nombreEjercicio" ng-model="ejercicio.fechaEjercicio" disabled>
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="observacionesEjercicio">Observaciones</label>
+                <textarea class="form-control" id="observacionesEjercicio" maxlength="295" rows="6" ng-model="ejercicio.observacionesEjercicio" disabled></textarea>
+            </fieldset>
+            <div class="text-right">
+                <a href="#/update/{{ejercicio.idEjercicio}}">
+                    <button class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></button>
+                </a>
+                <a href="#/delete/{{ejercicio.idEjercicio}}">
+                    <button class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button>
+                </a>
+            </div>
+        </form>
     </div>
-    <br>
 </div>
+<br>
 
 
 

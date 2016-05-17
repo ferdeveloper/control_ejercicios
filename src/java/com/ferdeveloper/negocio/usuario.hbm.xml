@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.ferdeveloper.negocio.Usuario" table="usuarios">
+    <id column="idUsuario" name="idUsuario" type="integer"/>
+    <property name="rolUsuario" column="rolUsuario"/>
+    <property name="nombreUsuario" column="nombreUsuario"/>
+    <property name="passwordUsuario" column="passwordUsuario"/>
+</class>
+</hibernate-mapping>

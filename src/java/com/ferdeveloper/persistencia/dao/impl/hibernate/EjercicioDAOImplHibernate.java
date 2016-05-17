@@ -10,6 +10,7 @@ import com.ferdeveloper.persistencia.dao.BussinessException;
 import com.ferdeveloper.persistencia.dao.EjercicioDAO;
 import com.ferdeveloper.persistencia.dao.GenericDAO;
 import com.ferdeveloper.persistencia.dao.HibernateUtil;
+import java.util.Date;
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -47,8 +48,11 @@ public class EjercicioDAOImplHibernate implements EjercicioDAO {
     @Override
     public void insert(Ejercicio ejercicio) throws BussinessException {
         HibernateUtil.buildSessionFactory();
-
+        
         try {
+            Date date = new Date();
+            java.sql.Date sqlDate = new java.sql.Date(date.getTime());
+            ejercicio.setFechaCreacion(sqlDate);
             HibernateUtil.openSessionAndBindToThread();
             Session session = HibernateUtil.getSessionFactory().getCurrentSession();
             session.beginTransaction();
