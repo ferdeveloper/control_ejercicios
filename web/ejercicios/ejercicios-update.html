@@ -15,17 +15,25 @@
             </fieldset>
             <fieldset class="form-group">
                 <label for="categoriaEjercicio">Categoría</label>
-                <input type="text" class="form-control" id="categoriaEjercicio" ng-model="ejercicio.categoriaEjercicio">
+                <select name="categoriaEjercicio" id="categoriaEjercicio" ng-model="ejercicio.categoriaEjercicio" class="form-control">
+                    <option ng-repeat="option in categoria.categoriasDisponibles" value="{{option.name}}">{{option.name}}</option>
+                </select>
             </fieldset>
             <fieldset class="form-group">
                 <label for="cursoEjercicio">Curso</label>
-                <input type="text" class="form-control" id="categoriaEjercicio" ng-model="ejercicio.cursoEjercicio">
+                <select name="cursoEjercicio" id="cursoEjercicio" ng-model="ejercicio.cursoEjercicio" class="form-control">
+                    <option ng-repeat="option in curso.cursosDisponibles" value="{{option.name}}">{{option.name}}</option>
+                </select>
             </fieldset>
             <fieldset class="form-group">
                 <label for="fechaEjercicio">Fecha</label>
                 <datepicker>
                     <input id="fechaEjercicio" ng-change="changeDatepickerDate()" class="form-control" ng-model="ejercicio.fechaEjercicio"/>
                 </datepicker>                                                     
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="nombreEjercicio">Fecha creación</label>
+                <input type="text" class="form-control" id="nombreEjercicio" ng-model="ejercicio.fechaCreacion" disabled>
             </fieldset>
             <fieldset class="form-group">
                 <label for="observacionesEjercicio">Observaciones</label>
