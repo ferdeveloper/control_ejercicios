@@ -1,15 +1,5 @@
 app.config(['$routeProvider', function ($routeProvider) {
 
-//        $routeProvider.when('/list/', {
-//            templateUrl: "ejercicios/ejercicios-list.html",
-//            controller: "ListController"
-//        });
-        
-//        $routeProvider.when('/find/:nombre?', {
-//            templateUrl: "entidadbancaria/entidadbancaria-find.html",
-//            controller: "FindController"
-//        });
-//
         $routeProvider.when('/get/:idEjercicio', {
             templateUrl: "ejercicios/ejercicios-get.html",
             controller: "GetController"

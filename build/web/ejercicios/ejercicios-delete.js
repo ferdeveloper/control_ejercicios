@@ -12,7 +12,6 @@ function DeleteController($scope, ejercicioService, $routeParams, $http, $locati
     
 
     $scope.borrar = function () {
-        element.modal('hide');
         ejercicioService.delete($scope.ejercicio.idEjercicio).then(function (result) {
             alert("Borrado con éxito el ejercicio: " + $scope.ejercicio.nombreEjercicio) + "\n Recargando...";
             $location.url("/admin");

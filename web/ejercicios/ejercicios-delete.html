@@ -9,10 +9,6 @@
 
         <form accept-charset="UTF-8" id="formularioUpdate" action="" method="post" ng-controller="DeleteController">
             <fieldset class="form-group">
-                <label for="idEjercicio">ID Ejercicio</label>
-                <input type="text" class="form-control" id="idEjercicio" ng-model="ejercicio.idEjercicio" ng-value="{{ejercicio.idEjercicio}}" ng-readonly="true">
-            </fieldset>
-            <fieldset class="form-group">
                 <label for="nombreEjercicio">Nombre</label>
                 <input type="text" class="form-control" id="nombreEjercicio" ng-model="ejercicio.nombreEjercicio" ng-value="{{ejercicio.nombreEjercicio}}" ng-readonly="true">
             </fieldset>
@@ -28,6 +24,10 @@
                 <label for="cursoEjercicio">Curso</label>
                 <input type="text" class="form-control" id="categoriaEjercicio" ng-model="ejercicio.cursoEjercicio" ng-readonly="true">
             </fieldset>
+             <fieldset class="form-group">
+                <label for="fechaEjercicio">Fecha creación</label>
+                <input type="text" class="form-control" id="fechaEjercicio" ng-model="ejercicio.fechaCreacion" ng-readonly="true">
+            </fieldset>
             <fieldset class="form-group">
                 <label for="fechaEjercicio">Fecha</label>
                 <input type="text" class="form-control" id="fechaEjercicio" ng-model="ejercicio.fechaEjercicio" ng-readonly="true">
@@ -37,15 +37,16 @@
                 <textarea class="form-control" id="observacionesEjercicio" maxlength="295" rows="6" ng-model="ejercicio.observacionesEjercicio" ng-readonly="true"></textarea>
             </fieldset>
             <div class="text-right">
-                <div ng-controller="FinalDeleteController" class="container">
+                <div ng-controller="FinalDeleteController">
                     <button ng-click="toggleModal()" class="btn btn-danger">Borrar</button>
 
                     <modal title="Login form" visible="showModal">
                         <form role="form">
-                            <p>Seguro que desea borrar el ejercicio {{ejercicio.nombreEjercicio}}</p>
-                            <button ng-click="borrar()" class="btn btn-danger">Borrar</button>
+                            <p>¿Seguro que deseas borrar el ejercicio {{ejercicio.nombreEjercicio}}?</p>
+                            <button ng-click="borrar()" class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Borrar</button>
                         </form>
                     </modal>
+                    
                 </div>
             </div>
         </form>

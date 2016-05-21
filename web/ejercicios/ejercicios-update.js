@@ -67,7 +67,6 @@ function UpdateController($scope, ejercicioService, $routeParams, $http, $locati
     function getDate() {
         fechaFormateada = new Date($scope.ejercicio.fechaEjercicio);
         $scope.ejercicio.fechaEjercicio = fechaFormateada.format("russafaDate");
-    }
-    ;
+    };
 }
 app.controller("UpdateController", UpdateController);
